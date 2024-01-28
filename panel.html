@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta name="description" content="Experience Unlimited Internet Access with Lightning-Fast Speeds and Uncompromising Security with WarpProxy. Enjoy Access to the World's Content with Confidence, Knowing Your Privacy is Protected Every Step of the Way.">
+        <meta name="keywords" content="WarpProxy">
+        <meta name="theme-color" content="#000">
+        <meta name="robots" content="index, follow">
+
+        <!-- IMPORT CSS MAIN -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <!-- IMPORT FONT AWESOME -->
+        <link rel="stylesheet" type="text/css" href="fonts/css/fontawesome.min.css">
+        <link rel="stylesheet" type="text/css" href="fonts/css/all.min.css">
+
+        <!-- IMPORT MANIFEST -->
+        <link rel="manifest" href="manifest.json">
+
+        <!-- IMPORT FAVICON -->
+        <link rel="shortcut icon" href="imgs/logo/SVG/WarpProxy_Logo_I.svg" type="image/x-icon">
+        
+        <!-- TITLE -->
+        <title>System Status - WarpProxy</title>
+    </head>
+    <body>
+
+        <!-- LOADER -->
+        <!-- <div class="loader-warpper" id="loader">
+            <div class="loader-progress">
+                <div class="loader-progress-circle"></div>
+            </div>
+        </div> -->
+
+
+        <!-- NAVBAR -->
+        <nav>
+            <img src="imgs/logo/SVG/WarpProxy_Logo_I.svg" alt="" class="logo-light-navbar" draggable="false" width="50px">
+            <img src="imgs/logo/SVG/WarpProxy_Logo_I_W.svg" alt="" class="logo-dark-navbar" draggable="false" width="50px">
+            <li class="far fa-bars" onclick="navbarMobile()" style="cursor: pointer;"></li>
+            <li class="far fa-close" onclick="navbarMobile()" style="cursor: pointer;"></li>
+        </nav>
+
+
+        <!-- MAIN -->
+        <main class="panel">
+            <!-- ALERT -->
+            <div class="alert-warpper">
+                <div class="alert" id="alertSuccessfulPanel">
+                    <div>
+                        <li class="far fa-check"></li>
+                        <div>
+                            <p>Panel successfully was restarted.</p>
+                        </div>
+                    </div>
+                    <a href="javascript:alertClosePanel()"><span class="far fa-close"></span></a>
+                </div>
+                <div class="alert" id="alertSuccessfulCopy">
+                    <div>
+                        <li class="far fa-check"></li>
+                        <div>
+                            <p>IP has been successfully copied.</p>
+                        </div>
+                    </div>
+                    <a href="javascript:alertClosePanel()"><span class="far fa-close"></span></a>
+                </div>
+            </div>
+
+            <aside class="aside-left" id="navbarMobile">
+                <div class="sidebar">
+                    <ul>
+                        <img src="imgs/logo/SVG/WarpProxy_Logo_I.svg" alt="" class="logo-light" draggable="false">
+                        <img src="imgs/logo/SVG/WarpProxy_Logo_I_W.svg" alt="" class="logo-dark" draggable="false">
+                        <a href="panel.html"><li class="sidebar-active"><span class="far fa-dashboard"></span> System Status</li></a>
+                        <a href="inbounds.html"><li><span class="far fa-user"></span> Inbounds</li></a>
+                        <a href="panel-settings.html"><li><span class="far fa-cog"></span> Panel Settings</li></a>
+                        <a href="index.html"><li><span class="far fa-sign-out"></span> Sign Out</li></a>
+                    </ul>
+                    <ul>
+                        <div class="tab-dark-light">
+                            <a href="javascript:switchLightMode()" title="Switch Light Mode"><span class="far fa-sun"></span></a>
+                            <a href="javascript:switchDarkMode()" title="Switch Dark Mode"><span class="far fa-moon"></span></a>
+                        </div>
+                        <div class="avatar-user" onclick="avatarUserDropdown()" style="cursor: pointer;">
+                            <div>
+                                <img src="imgs/avatars/avatar.png" alt="">
+                                <div>
+                                    <h4>Mahdi Rabiee</h4>
+                                    <p>mrabiee175@gmail.com</p>
+                                </div>
+                            </div>
+                            <li class="far fa-sort" style="font-size: 14px;"></li>
+                        </div>
+                    </ul>
+
+                    <!-- AVATAR USER DROPDOWN -->
+                    <div class="avatar-user-dropdown" id="avatarUserDropdown">
+                        <a href="javascript:void()" style="margin-bottom: 10px;">
+                            <li class="avatar-user-dropdown-avatar-team">
+                                <div>
+                                    <img src="imgs/avatars/avatar-team.jpg" alt="">
+                                    <span>WarpProxy Team</span>
+                                </div>
+                                <span class="far fa-check"></span>
+                            </li>
+                        </a>
+
+                        <a href="#"><li><span class="far fa-plus"></span> Create Team</li></a>
+                        <a href="#"><li><span class="far fa-cog"></span> Manage Team</li></a>
+                        <a href="#"><li><span class="far fa-info-circle"></span> Help Center</li></a>
+                    </div>
+                </div>
+            </aside>
+
+            <aside class="aside-right">
+                <div class="aside-right-card" id="networkTrafficCard">
+                    <div class="aside-right-card-header">
+                        <div>
+                            <span class="span-blue"></span>
+                            <h4>Network Traffic</h4>
+                        </div>
+                        <li class="far fa-sort" style="font-size: 13px; color: #707070; cursor: pointer;" onclick="networkTrafficCard()"></li>
+                    </div>
+                    <div class="aside-right-card-body">
+                        <div id="spark3"></div>
+                    </div>
+                </div>
+                <!-- ASIDE RIGHT GRID -->
+                <div class="aside-right-grid">
+                    <div class="aside-right-card" id="cpuCard">
+                        <div class="aside-right-card-header">
+                            <div>
+                                <span class="span-green"></span>
+                                <h4>CPU</h4>
+                            </div>
+                            <li class="far fa-sort" style="font-size: 13px; color: #707070; cursor: pointer;" onclick="cpuCard()"></li>
+                        </div>
+                        <div class="aside-right-card-body">
+                            <div style="display: flex; align-items: center;">
+                                <div class="loader-processor" style="height: 12px; width: 12px; border-width: 1px; margin-right: 5px; border-color: #707070;"></div>
+                                <p style="font-size: 13px; color: #707070;" id="processoringRunning"> Processoring...</p>
+                            </div>
+                            <div style="display: flex; align-items: center;">
+                                <div id="chart-radial-bar"><div class="chart-radial-bar-60"></div></div>
+                                <p class="badge" id="cpuId">60%</p>
+                            </div>
+                        </div>
+                        <div class="aside-right-card-footer">
+                            <p><span style="padding-right: 4px;"><i></i> Processor:</span> Intel Xeon Gold 5218</p>
+                            <p><span style="padding-right: 4px;"><i></i> Speed:</span> 2.30GHz</p>
+                            <p><span style="padding-right: 4px;"><i></i> vCPU:</span> 16</p>
+                        </div>
+                    </div>
+                    <div class="aside-right-card" id="ramCard">
+                        <div class="aside-right-card-header">
+                            <div>
+                                <span class="span-orange"></span>
+                                <h4>RAM</h4>
+                            </div>
+                            <li class="far fa-sort" style="font-size: 13px; color: #707070; cursor: pointer;" onclick="ramCard()"></li>
+                        </div>
+                        <div class="aside-right-card-body">
+                            <div style="display: flex; align-items: center;">
+                                <div class="loader-processor" style="height: 12px; width: 12px; border-width: 1px; margin-right: 5px; border-color: #707070;"></div>
+                                <p style="font-size: 13px; color: #707070;" id="processoringRunning2"> Processoring...</p>
+                            </div>
+                            <div style="display: flex; align-items: center;">
+                                <div id="chart-radial-bar"><div class="chart-radial-bar-40"></div></div>
+                                <p class="badge" id="ramId">40%</p>
+                            </div>
+                        </div>
+                        <div class="aside-right-card-footer">
+                            <p><span style="padding-right: 4px;"><i></i> Memory Usage:</span> 64GB</p>
+                            <p><span style="padding-right: 4px;"><i></i> Clock Speed:</span> 3200MHz</p>
+                            <p><span style="padding-right: 4px;"><i></i> Type:</span> DDR4</p>
+                        </div>
+                    </div>
+                    <div class="aside-right-card" id="hddCard">
+                        <div class="aside-right-card-header">
+                            <div>
+                                <span class="span-yellow"></span>
+                                <h4>HDD</h4>
+                            </div>
+                            <li class="far fa-sort" style="font-size: 13px; color: #707070; cursor: pointer;" onclick="hddCard()"></li>
+                        </div>
+                        <div class="aside-right-card-body">
+                            <div style="display: flex; align-items: center;">
+                                <div class="loader-processor" style="height: 12px; width: 12px; border-width: 1px; margin-right: 5px; border-color: #707070;"></div>
+                                <p style="font-size: 13px; color: #707070;" id="processoringRunning3"> Processoring...</p>
+                            </div>
+                            <div style="display: flex; align-items: center;">
+                                <div id="chart-radial-bar"><div class="chart-radial-bar-10"></div></div>
+                                <p class="badge" id="hddId">10%</p>
+                            </div>
+                        </div>
+                        <div class="aside-right-card-footer">
+                            <p><span style="padding-right: 4px;"><i></i> Model:</span> Samsung EVO 870 Pro</p>
+                            <p><span style="padding-right: 4px;"><i></i> Type:</span> NVMe SSD</p>
+                            <p><span style="padding-right: 4px;"><i></i> Capacity:</span> 2TB</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="aside-right-card" id="systemInfoCard">
+                    <div class="aside-right-card-header">
+                        <div>
+                            <span class="span-pink"></span>
+                            <h4>System Info</h4>
+                        </div>
+                        <li class="far fa-sort" style="font-size: 13px; color: #707070; cursor: pointer;" onclick="systemInfoCard()"></li>
+                    </div>
+                    <div class="aside-right-card-body">
+                        <div class="aside-right-grid-col-4">
+                            <div style="display: flex; align-items: center;" class="aside-right-card">
+                                <li class="badge badge-green far fa-podcast" style="margin-right: 10px; height: 30px; width: 30px; display: flex; align-items: center; justify-content: center; border-radius: 9999px;"></li>
+                                <li class="system-info-ip">
+                                    <h4><a href="javascript:ipIPv4()" id="ipIPv4" title="IPv4">192.168.1.1</a></a></h4>
+                                    <p><a href="javascript:ipIPv6()" id="ipIPv6" title="IPv6">a4:bc:11:00:01:d4::1</a></p>
+                                </li>
+                            </div>
+                            <div style="display: flex; align-items: center;" class="aside-right-card">
+                                <h5>OS: </h5><span class="badge badge-content badge-silver" style="margin-left: 5px;"><img src="imgs/elements/ubuntu.png" alt=""> <span>Ubuntu <span style="font-size: 10px;"><span>22.04.3 LTS</span></span></span></span>
+                            </div>
+                            <div style="display: flex; align-items: center;" class="aside-right-card">
+                                <h5>Panel Version: </h5><span class="badge badge-content badge-silver" style="margin-left: 5px;"><img src="imgs/logo/SVG/WarpProxy_Logo_I.svg" alt=""> <span>v1.0</span></span>
+                            </div>
+                            <div style="display: flex; align-items: center;" class="aside-right-card">
+                                <h5>Status: <span class="badge badge-green" style="margin-left: 5px;">Running</span> <a href="javascript:restartPanel()" title="Restart Panel"><span class="badge badge-blue" style="margin-left: 2px;">Restart</span></a></h5>
+                            </div>
+                            <div style="display: flex; align-items: center;" class="aside-right-card">
+                                <h5>Uptime: <span class="badge badge-silver" style="margin-left: 5px;">104d 8h</span></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="aside-right-card" id="systemLogsCard">
+                    <div class="aside-right-card-header">
+                        <div>
+                            <span class="span-pruple"></span>
+                            <h4>System Logs</h4>
+                        </div>
+                        <li class="far fa-sort" style="font-size: 13px; color: #707070; cursor: pointer;" onclick="systemLogsCard()"></li>
+                    </div>
+                    <div class="aside-right-card-body">
+                        <pre class="system-logs">
+------------ Plugin Loading Log ------------
+
+Loading from root path: C:\Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\
+
+Scanning for the following file types: *.prmp, *.prm, *.dll, *.aex, *.8bf
+
+Begin PluginNameList::AddFolder C:\Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\Chorus1.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\Chorus2.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\Chorus6.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\DeClicker1.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\DeClicker2.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\DeClicker6.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\DeCrackler1.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\DeCrackler2.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\DeCrackler6.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\DeEsser1.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\DeEsser2.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\DeEsser6.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\DeHummer1.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\DeHummer2.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\DeHummer6.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\DeNoiser1.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\DeNoiser2.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\DeNoiser6.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\Dynamics1.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\Dynamics2.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\Dynamics6.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\EQ1.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\EQ2.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\EQ6.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\Flanger1.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\Flanger2.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\Flanger6.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\MultiBand1.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\MultiBand2.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\MultiBand6.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\Phaser1.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\Phaser2.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\Phaser6.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\PitchShifter1.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\PitchShifter2.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\PitchShifter6.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\Reverb1.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\Reverb2.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\Reverb6.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\SpectralNoiseReduction1.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\SpectralNoiseReduction2.dll" 0
+PluginNameList::AddFilePath - added "C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\SpectralNoiseReduction6.dll" 0
+Finished PluginNameList::AddFolder C:\Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US 0
+Scanning C:\Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US and sub-directories
+
+Loading C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\Chorus1.dll
+
+The registry tells us to cache so the plugin will be loaded from the cache.
+
+The plugin is marked as Ignore, so it will not be loaded.
+
+
+Loading C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\Chorus2.dll
+
+The registry tells us to cache so the plugin will be loaded from the cache.
+
+The plugin is marked as Ignore, so it will not be loaded.
+
+
+Loading C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\Chorus6.dll
+
+The registry tells us to cache so the plugin will be loaded from the cache.
+
+The plugin is marked as Ignore, so it will not be loaded.
+
+
+Loading C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\DeClicker1.dll
+
+The registry tells us to cache so the plugin will be loaded from the cache.
+
+The plugin is marked as Ignore, so it will not be loaded.
+
+
+Loading C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\DeClicker2.dll
+
+The registry tells us to cache so the plugin will be loaded from the cache.
+
+The plugin is marked as Ignore, so it will not be loaded.
+
+
+Loading C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\DeClicker6.dll
+
+The registry tells us to cache so the plugin will be loaded from the cache.
+
+The plugin is marked as Ignore, so it will not be loaded.
+
+
+Loading C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\DeCrackler1.dll
+
+The registry tells us to cache so the plugin will be loaded from the cache.
+
+The plugin is marked as Ignore, so it will not be loaded.
+
+
+Loading C:/Program Files\Adobe\Adobe Media Encoder CC 2018\Plug-Ins\en_US\VSTPlugins\DeCrackler2.dll
+
+The registry tells us to cache so the plugin will be loaded from the cache.
+
+The plugin is marked as Ignore, so it will not be loaded.
+                        </pre>
+                    </div>
+                </div>
+            </aside>
+        </main>
+
+
+        <!-- INDICATOR -->
+        <!-- <div class="indicator-warpper">
+            <div class="indicator"></div>
+        </div> -->
+
+
+
+        <!-- IMPORT JS -->
+        <script src="js/app.js"></script>
+        <!-- IMPORT CHARTS -->
+        <script src="js/charts/apexcharts.min.js"></script>
+        <script src="js/charts/scripts.js"></script>
+    
+    </body>
+</html>

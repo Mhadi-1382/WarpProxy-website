@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta name="description" content="Experience Unlimited Internet Access with Lightning-Fast Speeds and Uncompromising Security with WarpProxy. Enjoy Access to the World's Content with Confidence, Knowing Your Privacy is Protected Every Step of the Way.">
+        <meta name="keywords" content="WarpProxy">
+        <meta name="theme-color" content="#000">
+        <meta name="robots" content="index, follow">
+
+        <!-- IMPORT CSS MAIN -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <!-- IMPORT FONT AWESOME -->
+        <link rel="stylesheet" type="text/css" href="fonts/css/fontawesome.min.css">
+        <link rel="stylesheet" type="text/css" href="fonts/css/all.min.css">
+
+        <!-- IMPORT MANIFEST -->
+        <link rel="manifest" href="manifest.json">
+
+        <!-- IMPORT FAVICON -->
+        <link rel="shortcut icon" href="imgs/logo/SVG/WarpProxy_Logo_I.svg" type="image/x-icon">
+        
+        <!-- TITLE -->
+        <title>Sign in - WarpProxy</title>
+    </head>
+    <body>
+
+        <!-- LOADER -->
+        <div class="loader-warpper" id="loader">
+            <div class="loader-progress">
+                <div class="loader-progress-circle"></div>
+            </div>
+        </div>
+
+
+        <!-- NAVBAR -->
+        <nav style="display: none !important;">
+            <img src="imgs/logo/SVG/WarpProxy_Logo_I.svg" alt="" class="logo-light-navbar" draggable="false" width="50px">
+            <img src="imgs/logo/SVG/WarpProxy_Logo_I_W.svg" alt="" class="logo-dark-navbar" draggable="false" width="50px">
+            <li class="far fa-bars" onclick="navbarMobile()" style="cursor: pointer;"></li>
+            <li class="far fa-close" onclick="navbarMobile()" style="cursor: pointer;"></li>
+        </nav>
+
+
+        <!-- MAIN -->
+        <main class="signin">
+            <!-- ALERT -->
+            <div class="alert-warpper">
+                <div class="alert" id="alertSuccessful">
+                    <div>
+                        <li class="far fa-check"></li>
+                        <div>
+                            <h4>Successful</h4>
+                            <p>Sign in was successful.</p>
+                        </div>
+                    </div>
+                    <a href="javascript:alertClose()"><span class="far fa-close"></span></a>
+                </div>
+                <div class="alert" id="alertUnsuccessful">
+                    <div>
+                        <li class="far fa-close"></li>
+                        <div>
+                            <h4>Unsuccessful</h4>
+                            <p>Please check your username and password and try again.</p>
+                        </div>
+                    </div>
+                    <a href="javascript:alertClose()"><span class="far fa-close"></span></a>
+                </div>
+            </div>
+
+            <!-- FORM: SIGNIN -->
+            <div class="form-signin">
+                <!-- LOGO -->
+                <img src="imgs/logo/SVG/WarpProxy_Logo_I.svg" alt="" class="logo-light" draggable="false">
+                <img src="imgs/logo/SVG/WarpProxy_Logo_I_W.svg" alt="" class="logo-dark" draggable="false">
+
+                <!-- INPUTS -->
+                <input type="text" placeholder="Username" aria-placeholder="Username" required  id="inputText">
+                <input type="password" placeholder="Password" aria-placeholder="Password" required  id="inputPassword">
+                <input type="submit" value="Sign in" id="inputSubmit">
+            </div>
+        </main>
+
+
+        <!-- INDICATOR -->
+        <div class="indicator-warpper">
+            <div class="indicator"></div>
+        </div>
+
+
+
+        <!-- IMPORT JS -->
+        <script src="js/app.js"></script>
+    
+    </body>
+</html>

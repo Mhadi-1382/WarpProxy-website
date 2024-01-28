@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta name="description" content="Experience Unlimited Internet Access with Lightning-Fast Speeds and Uncompromising Security with WarpProxy. Enjoy Access to the World's Content with Confidence, Knowing Your Privacy is Protected Every Step of the Way.">
+        <meta name="keywords" content="WarpProxy">
+        <meta name="theme-color" content="#000">
+        <meta name="robots" content="index, follow">
+
+        <!-- IMPORT CSS MAIN -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <!-- IMPORT FONT AWESOME -->
+        <link rel="stylesheet" type="text/css" href="fonts/css/fontawesome.min.css">
+        <link rel="stylesheet" type="text/css" href="fonts/css/all.min.css">
+
+        <!-- IMPORT MANIFEST -->
+        <link rel="manifest" href="manifest.json">
+
+        <!-- IMPORT FAVICON -->
+        <link rel="shortcut icon" href="imgs/logo/SVG/WarpProxy_Logo_I.svg" type="image/x-icon">
+        
+        <!-- TITLE -->
+        <title>Inbounds - WarpProxy</title>
+    </head>
+    <body>
+
+        <!-- LOADER -->
+        <div class="loader-warpper" id="loader">
+            <div class="loader-progress">
+                <div class="loader-progress-circle"></div>
+            </div>
+        </div>
+
+
+        <!-- NAVBAR -->
+        <nav>
+            <img src="imgs/logo/SVG/WarpProxy_Logo_I.svg" alt="" class="logo-light-navbar" draggable="false" width="50px">
+            <img src="imgs/logo/SVG/WarpProxy_Logo_I_W.svg" alt="" class="logo-dark-navbar" draggable="false" width="50px">
+            <li class="far fa-bars" onclick="navbarMobile()" style="cursor: pointer;"></li>
+            <li class="far fa-close" onclick="navbarMobile()" style="cursor: pointer;"></li>
+        </nav>
+
+
+        <!-- MAIN -->
+        <main class="panel inbounds">
+            <!-- ALERT -->
+            <div class="alert-warpper">
+                <div class="alert" id="addInboundsCreates">
+                    <div>
+                        <li class="far fa-check"></li>
+                        <div>
+                            <p>Proxy was successfully Created.</p>
+                        </div>
+                    </div>
+                    <a href="javascript:alertClosePanel()"><span class="far fa-close"></span></a>
+                </div>
+            </div>
+
+            <aside class="aside-left" id="navbarMobile">
+                <div class="sidebar">
+                    <ul>
+                        <img src="imgs/logo/SVG/WarpProxy_Logo_I.svg" alt="" class="logo-light" draggable="false">
+                        <img src="imgs/logo/SVG/WarpProxy_Logo_I_W.svg" alt="" class="logo-dark" draggable="false">
+                        <a href="panel.html"><li><span class="far fa-dashboard"></span> System Status</li></a>
+                        <a href="inbounds.html"><li class="sidebar-active"><span class="far fa-user"></span> Inbounds</li></a>
+                        <a href="panel-settings.html"><li><span class="far fa-cog"></span> Panel Settings</li></a>
+                        <a href="index.html"><li><span class="far fa-sign-out"></span> Sign Out</li></a>
+                    </ul>
+                    <ul>
+                        <div class="tab-dark-light">
+                            <a href="javascript:switchLightMode()" title="Switch Light Mode"><span class="far fa-sun"></span></a>
+                            <a href="javascript:switchDarkMode()" title="Switch Dark Mode"><span class="far fa-moon"></span></a>
+                        </div>
+                        <div class="avatar-user" onclick="avatarUserDropdown()" style="cursor: pointer;">
+                            <div>
+                                <img src="imgs/avatars/avatar.png" alt="">
+                                <div>
+                                    <h4>Mahdi Rabiee</h4>
+                                    <p>mrabiee175@gmail.com</p>
+                                </div>
+                            </div>
+                            <li class="far fa-sort" style="font-size: 14px;"></li>
+                        </div>
+                    </ul>
+
+                    <!-- AVATAR USER DROPDOWN -->
+                    <div class="avatar-user-dropdown" id="avatarUserDropdown">
+                        <a href="javascript:void()" style="margin-bottom: 10px;">
+                            <li class="avatar-user-dropdown-avatar-team">
+                                <div>
+                                    <img src="imgs/avatars/avatar-team.jpg" alt="">
+                                    <span>WarpProxy Team</span>
+                                </div>
+                                <span class="far fa-check"></span>
+                            </li>
+                        </a>
+
+                        <a href="#"><li><span class="far fa-plus"></span> Create Team</li></a>
+                        <a href="#"><li><span class="far fa-cog"></span> Manage Team</li></a>
+                        <a href="#"><li><span class="far fa-info-circle"></span> Help Center</li></a>
+                    </div>
+                </div>
+            </aside>
+
+            <aside class="aside-right">
+                <div class="aside-right-grid">
+                    <div style="display: flex; align-items: center;" class="aside-right-card">
+                        <h5>Total Uploads/Downloads: </h5><span class="badge badge-green" style="margin-left: 5px;"><span>12TB / 21TB</span>
+                    </div>
+                    <div style="display: flex; align-items: center;" class="aside-right-card">
+                        <h5>Total Usage: </h5><span class="badge badge-green" style="margin-left: 5px;"><span>33TB</span>
+                    </div>
+                    <div style="display: flex; align-items: center;" class="aside-right-card">
+                        <h5>Number Of Inbounds: </h5><span class="badge badge-green" style="margin-left: 5px;"><span>8</span>
+                    </div>
+                </div>
+
+                <div class="inbounds-table-warpper">
+                    <div class="aside-right-card">
+                        <div class="aside-right-card-header" style="flex-wrap: wrap;">
+                            <div>
+                                <a href="javascript:addInbounds()">
+                                    <button class="button"><i class="far fa-plus" style="margin-right: 5px;"></i> Add Inbonds</button>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="javascript:actionsDropdownInbounds()" style="margin-left: 5px;">
+                                    <button class="button"><i class="far fa-bars" style="margin-right: 5px;"></i> General Actions</button>
+                                </a>
+                            </div>
+
+                            <!-- ADD INBOUNDS -->
+                            <div class="add-inbounds-overlay" id="addInboundsOverlay">
+                                <div class="add-inbounds" id="addInbounds">
+                                    <div class="add-inbounds-header">
+                                        <div class="add-inbounds-button-key" onclick="addInbounds()"></div>
+                                        <p>Add Inbonds</p>
+                                    </div>
+                                    <div class="add-inbounds-body">
+                                        <div>
+                                            <p>Remark</p>
+                                            <input type="text">
+                                        </div>
+                                        <div>
+                                            <p>Portocol</p>
+                                            <select name="" id="">
+                                                <option value="">VLEES</option>
+                                                <option value="">VMESS</option>
+                                                <option value="">SHADOW SOCKS</option>
+                                                <option value="">REALITY</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <p>Port</p>
+                                            <input type="text" value="443">
+                                        </div>
+                                        <div>
+                                            <p>Total Flow(GB)</p>
+                                            <input type="number">
+                                        </div>
+                                        <div>
+                                            <p>Expire Date</p>
+                                            <input type="date">
+                                        </div>
+                                        <div>
+                                            <p>Transmission</p>
+                                            <select name="" id="">
+                                                <option value="">TCP</option>
+                                                <option value="">WS</option>
+                                                <option value="">GRPC</option>
+                                                <option value="">REALITY</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="add-inbounds-footer">
+                                        <a href="javascript:addInbounds()" style="margin-left: 5px;">
+                                            <button class="button button-dark" style="background-color: rgb(180, 180, 180) !important;"><i class="far fa-close" style="margin-right: 5px;"></i>Cancel</button>
+                                        </a>
+                                        <a href="javascript:addInboundsCreate()" style="margin-left: 5px;">
+                                            <button class="button"><i class="far fa-check" style="margin-right: 5px;"></i>Create</button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ACTIONS DROPDOWN INBOUNDS -->
+                            <div class="actions-dropdown-inbounds" id="actionsDropdownInbounds">
+                                <a href="#"><p><i class="far fa-trash"></i> Delete All Proxy</p></a>
+                                <a href="#"><p><i class="far fa-refresh"></i> Reset All Traffic</p></a>
+                                <a href="#"><p><i class="far fa-download"></i> Backup Proxy</p></a>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="aside-right-card-footer">
+                            <div style="padding: 1rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+                                <div class="inbounds-form-search">
+                                    <span class="far fa-search"></span>
+                                    <input type="search" placeholder="Search" aria-placeholder="Search">
+                                </div>
+                                <a href="javascript:filterInbounds()" style="margin-left: 5px;" title="Filter">
+                                    <button class="button" style="height: 35px; width: 35px; display: flex; align-items: center; justify-content: center; background-color: transparent; border: 2px solid rgba(0, 0, 0, 0.1); color: #555555;"><span class="far fa-filter"></span></button>
+                                </a>
+                            </div>
+                            <div class="inbounds-table">
+                                <div class="inbounds-table-column">
+                                    <li>ID</li>
+                                    <li>Remark</li>
+                                    <li>Port</li>
+                                    <li>Portocol</li>
+                                    <li>Traffic</li>
+                                    <li>Expire Date</li>
+                                </div>
+                                <div class="inbounds-table-row" id="inboundsTableRowID1">
+                                    <li style="display: flex; align-items: center;">1 <a href="javascript:deleteInboundsID1()"><span class="far fa-trash" style="height: 10px; width: 10px; display: flex; align-items: center; justify-content: center; margin-left: 20px;" title="Delete"></a></span><a href="javascript:optionsDropdownInboundsID1()"><span class="far fa-ellipsis" style="height: 10px; width: 10px; display: flex; align-items: center; justify-content: center; margin-left: 20px;" title="More Options"></a></span></li>
+                                    <li>WarpProxy</li>
+                                    <li>443</li>
+                                    <li><span class="badge badge-red">VLEES</span> <span class="badge badge-green">TCP</span></li>
+                                    <li>
+                                        <div style="display: flex; align-items: center;">
+                                            <div id="chart-radial-bar" class="chart-radial-bar-height-5"><div class="chart-radial-bar-60 chart-radial-bar-height-5"></div></div>
+                                            <p class="badge">12TB</p>
+                                        </div>
+                                    </li>
+                                    <li><span class="badge badge-blue">∞</span></li>
+
+                                    <!-- OPTIONS DROPDOWN INBOUNDS -->
+                                    <div class="options-dropdown-inbounds" id="optionsDropdownInboundsID1">
+                                        <a href="#"><p><span class="far fa-pencil"></span> Edit Proxy</p></a>
+                                        <a href="#"><p><span class="far fa-user-plus"></span> Add User Group</p></a>
+                                        <a href="#"><p><span class="far fa-refresh"></span> Reset Traffic</p></a>
+                                    </div>
+                                </div>
+                                <div class="inbounds-table-row" id="inboundsTableRowID2">
+                                    <li style="display: flex; align-items: center;">2 <a href="javascript:deleteInboundsID2()"><span class="far fa-trash" style="height: 10px; width: 10px; display: flex; align-items: center; justify-content: center; margin-left: 20px;" title="Delete"></a></span><a href="javascript:optionsDropdownInboundsID2()"><span class="far fa-ellipsis" style="height: 10px; width: 10px; display: flex; align-items: center; justify-content: center; margin-left: 20px;" title="More Options"></a></span></li>
+                                    <li>Manager</li>
+                                    <li>2083</li>
+                                    <li><span class="badge badge-red">VLEES</span> <span class="badge badge-blue">GRPC</span></li>
+                                    <li>
+                                        <div style="display: flex; align-items: center;">
+                                            <div id="chart-radial-bar" class="chart-radial-bar-height-5"><div class="chart-radial-bar-10 chart-radial-bar-height-5"></div></div>
+                                            <p class="badge">5TB</p>
+                                        </div>
+                                    </li>
+                                    <li><span class="badge badge-blue">∞</span></li>
+
+                                    <!-- OPTIONS DROPDOWN INBOUNDS -->
+                                    <div class="options-dropdown-inbounds" id="optionsDropdownInboundsID2">
+                                        <a href="#"><p><span class="far fa-pencil"></span> Edit Proxy</p></a>
+                                        <a href="#"><p><span class="far fa-user-plus"></span> Add User Group</p></a>
+                                        <a href="#"><p><span class="far fa-refresh"></span> Reset Traffic</p></a>
+                                    </div>
+                                </div>
+                                <div class="inbounds-table-row" id="inboundsTableRowID3">
+                                    <li style="display: flex; align-items: center;">3 <a href="javascript:deleteInboundsID3()"><span class="far fa-trash" style="height: 10px; width: 10px; display: flex; align-items: center; justify-content: center; margin-left: 20px;" title="Delete"></a></span><a href="javascript:optionsDropdownInboundsID3()"><span class="far fa-ellipsis" style="height: 10px; width: 10px; display: flex; align-items: center; justify-content: center; margin-left: 20px;" title="More Options"></a></span></li>
+                                    <li>Security</li>
+                                    <li>2096</li>
+                                    <li><span class="badge badge-red">VLEES</span> <span class="badge badge-yellow">WS</span></li>
+                                    <li>
+                                        <div style="display: flex; align-items: center;">
+                                            <div id="chart-radial-bar" class="chart-radial-bar-height-5"><div class="chart-radial-bar-10 chart-radial-bar-height-5"></div></div>
+                                            <p class="badge">4TB</p>
+                                        </div>
+                                    </li>
+                                    <li><span class="badge badge-blue">∞</span></li>
+
+                                    <!-- OPTIONS DROPDOWN INBOUNDS -->
+                                    <div class="options-dropdown-inbounds" id="optionsDropdownInboundsID3">
+                                        <a href="#"><p><span class="far fa-pencil"></span> Edit Proxy</p></a>
+                                        <a href="#"><p><span class="far fa-user-plus"></span> Add User Group</p></a>
+                                        <a href="#"><p><span class="far fa-refresh"></span> Reset Traffic</p></a>
+                                    </div>
+                                </div>
+                                <div class="inbounds-table-row" id="inboundsTableRowID4">
+                                    <li style="display: flex; align-items: center;">4 <a href="javascript:deleteInboundsID4()"><span class="far fa-trash" style="height: 10px; width: 10px; display: flex; align-items: center; justify-content: center; margin-left: 20px;" title="Delete"></a></span><a href="javascript:optionsDropdownInboundsID4()"><span class="far fa-ellipsis" style="height: 10px; width: 10px; display: flex; align-items: center; justify-content: center; margin-left: 20px;" title="More Options"></a></span></li>
+                                    <li>WP1</li>
+                                    <li>443</li>
+                                    <li><span class="badge badge-red">VMESS</span> <span class="badge badge-yellow">WS</span> <span class="badge badge-green">TLS</span></li>
+                                    <li>
+                                        <div style="display: flex; align-items: center;">
+                                            <div id="chart-radial-bar" class="chart-radial-bar-height-5"><div class="chart-radial-bar-60 chart-radial-bar-height-5"></div></div>
+                                            <p class="badge">3TB</p>
+                                        </div>
+                                    </li>
+                                    <li><span class="badge badge-blue">∞</span></li>
+
+                                    <!-- OPTIONS DROPDOWN INBOUNDS -->
+                                    <div class="options-dropdown-inbounds" id="optionsDropdownInboundsID4">
+                                        <a href="#"><p><span class="far fa-pencil"></span> Edit Proxy</p></a>
+                                        <a href="#"><p><span class="far fa-user-plus"></span> Add User Group</p></a>
+                                        <a href="#"><p><span class="far fa-refresh"></span> Reset Traffic</p></a>
+                                    </div>
+                                </div>
+                                <div class="inbounds-table-row" id="inboundsTableRowID5">
+                                    <li style="display: flex; align-items: center;">5 <a href="javascript:deleteInboundsID5()"><span class="far fa-trash" style="height: 10px; width: 10px; display: flex; align-items: center; justify-content: center; margin-left: 20px;" title="Delete"></a></span><a href="javascript:optionsDropdownInboundsID5()"><span class="far fa-ellipsis" style="height: 10px; width: 10px; display: flex; align-items: center; justify-content: center; margin-left: 20px;" title="More Options"></a></span></li>
+                                    <li>WP2</li>
+                                    <li>443</li>
+                                    <li><span class="badge badge-red">VLEES</span> <span class="badge badge-silver">SS</span></li>
+                                    <li>
+                                        <div style="display: flex; align-items: center;">
+                                            <div id="chart-radial-bar" class="chart-radial-bar-height-5"><div class="chart-radial-bar-40 chart-radial-bar-height-5"></div></div>
+                                            <p class="badge">2TB</p>
+                                        </div>
+                                    </li>
+                                    <li><span class="badge badge-blue">∞</span></li>
+
+                                    <!-- OPTIONS DROPDOWN INBOUNDS -->
+                                    <div class="options-dropdown-inbounds" id="optionsDropdownInboundsID5">
+                                        <a href="#"><p><span class="far fa-pencil"></span> Edit Proxy</p></a>
+                                        <a href="#"><p><span class="far fa-user-plus"></span> Add User Group</p></a>
+                                        <a href="#"><p><span class="far fa-refresh"></span> Reset Traffic</p></a>
+                                    </div>
+                                </div>
+                                <div class="inbounds-table-row" id="inboundsTableRowID6">
+                                    <li style="display: flex; align-items: center;">6 <a href="javascript:deleteInboundsID6()"><span class="far fa-trash" style="height: 10px; width: 10px; display: flex; align-items: center; justify-content: center; margin-left: 20px;" title="Delete"></a></span><a href="javascript:optionsDropdownInboundsID6()"><span class="far fa-ellipsis" style="height: 10px; width: 10px; display: flex; align-items: center; justify-content: center; margin-left: 20px;" title="More Options"></a></span></li>
+                                    <li>WP3</li>
+                                    <li>443</li>
+                                    <li><span class="badge badge-red">VLEES</span> <span class="badge badge-green">TLS</span></li>
+                                    <li>
+                                        <div style="display: flex; align-items: center;">
+                                            <div id="chart-radial-bar" class="chart-radial-bar-height-5"><div class="chart-radial-bar-10 chart-radial-bar-height-5"></div></div>
+                                            <p class="badge">2TB</p>
+                                        </div>
+                                    </li>
+                                    <li><span class="badge badge-blue">∞</span></li>
+
+                                    <!-- OPTIONS DROPDOWN INBOUNDS -->
+                                    <div class="options-dropdown-inbounds" id="optionsDropdownInboundsID6">
+                                        <a href="#"><p><span class="far fa-pencil"></span> Edit Proxy</p></a>
+                                        <a href="#"><p><span class="far fa-user-plus"></span> Add User Group</p></a>
+                                        <a href="#"><p><span class="far fa-refresh"></span> Reset Traffic</p></a>
+                                    </div>
+                                </div>
+                                <div class="inbounds-table-row" id="inboundsTableRowID7">
+                                    <li style="display: flex; align-items: center;">7 <a href="javascript:deleteInboundsID7()"><span class="far fa-trash" style="height: 10px; width: 10px; display: flex; align-items: center; justify-content: center; margin-left: 20px;" title="Delete"></a></span><a href="javascript:optionsDropdownInboundsID7()"><span class="far fa-ellipsis" style="height: 10px; width: 10px; display: flex; align-items: center; justify-content: center; margin-left: 20px;" title="More Options"></a></span></li>
+                                    <li>WP4</li>
+                                    <li>443</li>
+                                    <li><span class="badge badge-red">VLEES</span> <span class="badge badge-blue">GRPC</span></li>
+                                    <li>
+                                        <div style="display: flex; align-items: center;">
+                                            <div id="chart-radial-bar" class="chart-radial-bar-height-5"><div class="chart-radial-bar-40 chart-radial-bar-height-5"></div></div>
+                                            <p class="badge">3TB</p>
+                                        </div>
+                                    </li>
+                                    <li><span class="badge badge-blue">∞</span></li>
+
+                                    <!-- OPTIONS DROPDOWN INBOUNDS -->
+                                    <div class="options-dropdown-inbounds" id="optionsDropdownInboundsID7">
+                                        <a href="#"><p><span class="far fa-pencil"></span> Edit Proxy</p></a>
+                                        <a href="#"><p><span class="far fa-user-plus"></span> Add User Group</p></a>
+                                        <a href="#"><p><span class="far fa-refresh"></span> Reset Traffic</p></a>
+                                    </div>
+                                </div>
+                                <div class="inbounds-table-row" id="inboundsTableRowID8">
+                                    <li style="display: flex; align-items: center;">8 <a href="javascript:deleteInboundsID8()"><span class="far fa-trash" style="height: 10px; width: 10px; display: flex; align-items: center; justify-content: center; margin-left: 20px;" title="Delete"></a></span><a href="javascript:optionsDropdownInboundsID8()"><span class="far fa-ellipsis" style="height: 10px; width: 10px; display: flex; align-items: center; justify-content: center; margin-left: 20px;" title="More Options"></a></span></li>
+                                    <li>WP5</li>
+                                    <li>443</li>
+                                    <li><span class="badge badge-red">VLEES</span> <span class="badge badge-blue">REALITY</span></li>
+                                    <li>
+                                        <div style="display: flex; align-items: center;">
+                                            <div id="chart-radial-bar" class="chart-radial-bar-height-5"><div class="chart-radial-bar-60 chart-radial-bar-height-5"></div></div>
+                                            <p class="badge">2TB</p>
+                                        </div>
+                                    </li>
+                                    <li><span class="badge badge-blue">∞</span></li>
+
+                                    <!-- OPTIONS DROPDOWN INBOUNDS -->
+                                    <div class="options-dropdown-inbounds" id="optionsDropdownInboundsID8">
+                                        <a href="#"><p><span class="far fa-pencil"></span> Edit Proxy</p></a>
+                                        <a href="#"><p><span class="far fa-user-plus"></span> Add User Group</p></a>
+                                        <a href="#"><p><span class="far fa-refresh"></span> Reset Traffic</p></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </main>
+
+
+        <!-- INDICATOR -->
+        <!-- <div class="indicator-warpper">
+            <div class="indicator"></div>
+        </div> -->
+
+
+
+        <!-- IMPORT JS -->
+        <script src="js/app.js"></script>
+        <!-- IMPORT CHARTS -->
+        <script src="js/charts/apexcharts.min.js"></script>
+        <script src="js/charts/scripts.js"></script>
+    
+    </body>
+</html>

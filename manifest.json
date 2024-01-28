@@ -1,0 +1,20 @@
+{
+  "dir": "ltr",
+  "lang": "en",
+  "name": "WarpProxy",
+  "short_name": "WarpProxy",
+  "display": "fullscreen",
+  "display_override": ["standalone", "minimal-ui"],
+  "start_url": "/",
+  "background_color": "#FFFFFF",
+  "theme_color": "#000",
+  "description": "Experience Unlimited Internet Access with Lightning-Fast Speeds and Uncompromising Security with WarpProxy. Enjoy Access to the World's Content with Confidence, Knowing Your Privacy is Protected Every Step of the Way.",
+  "orientation": "portrait",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/imgs/logo/SVG/WarpProxy_Logo_I_x4.png",
+      "type": "image/png"
+    }
+  ]
+}
