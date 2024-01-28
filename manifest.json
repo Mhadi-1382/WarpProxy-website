@@ -5,7 +5,6 @@
   "short_name": "WarpProxy",
   "display": "fullscreen",
   "display_override": ["standalone", "minimal-ui"],
-  "scope": ".",
   "start_url": "/WarpProxy-website/",
   "background_color": "#FFFFFF",
   "theme_color": "#000",
