@@ -10,6 +10,8 @@
 
 **Experience Unlimited Internet Access with Lightning-Fast Speeds and Uncompromising Security with WarpProxy. Enjoy Access to the World's Content with Confidence, Knowing Your Privacy is Protected Every Step of the Way.**
 
+***Note:** The username and password for login is **root**.*
+
 ***
 
 **WarpProxy Website Project UI:** <a href="https://dribbble.com/shots/23531414-WarpProxy-Website-Project">https://dribbble.com/shots/23531414-WarpProxy-Website-Project</a>
