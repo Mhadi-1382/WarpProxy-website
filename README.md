@@ -12,6 +12,6 @@
 
 ***
 
-**WarpProxy Website Project UI:** <a href=""></a>
+**WarpProxy Website Project UI:** <a href="https://dribbble.com/shots/23531414-WarpProxy-Website-Project">https://dribbble.com/shots/23531414-WarpProxy-Website-Project</a>
 <br>
-**WarpProxy Logo Project:** <a href=""></a>
+**WarpProxy Logo Project:** <a href="https://dribbble.com/shots/23531404-WarpProxy-Logo-Project">https://dribbble.com/shots/23531404-WarpProxy-Logo-Project</a>
